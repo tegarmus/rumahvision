@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Vision - Solusi Kreatif Media & Informasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #fd7e14;
+            --dark: #2d3436;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* WhatsApp button styles */
+        .btn-wa {
+            background-color: #25D366;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 767px) {
+            .btn-wa {
+                width: 65px;
+                height: 65px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+        }
+        .btn-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pt-16"> <!-- Added pt-16 to account for navbar height -->
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-purple-700">RUMAH VISION</h1>
+                    </div>
+                    <div class="hidden md:block">
+    <div class="ml-auto flex items-baseline space-x-4">
+        <a href="#home" class="text-gray-700 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+        <a href="#services" class="text-gray-700 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium">Layanan</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium">Portfolio</a>
+        <a href="#about" class="text-gray-700 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+        <a href="#contact" class="text-gray-700 hover:text-purple-700 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+    </div>
+</div>
+
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-purple-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-600" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                            <span class="sr-only">Buka menu utama</span>
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:hidden">
+                    <a href="https://wa.me/6283838383948" class="btn-wa text-white px-4 py-2 rounded-full text-sm font-medium flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i> Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden fixed top-16 left-0 right-0 z-40" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-sm">
+            <a href="#home" class="text-gray-700 hover:text-purple-700 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+            <a href="#services" class="text-gray-700 hover:text-purple-700 block px-3 py-2 rounded-md text-base font-medium">Layanan</a>
+            <a href="#portfolio" class="text-gray-700 hover:text-purple-700 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+            <a href="#about" class="text-gray-700 hover:text-purple-700 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
+            <a href="#contact" class="text-gray-700 hover:text-purple-700 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Transformasi Ide Menjadi <span class="text-orange-400">Visual Kreatif</span></h1>
+                    <p class="text-lg md:text-xl mb-8">Rumah Vision memberikan solusi kreatif untuk kebutuhan media dan informasi Anda dengan kualitas profesional.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-medium text-center">Mulai Proyek Anda</a>
+                        <a href="#services" class="bg-white hover:bg-gray-100 text-purple-700 px-6 py-3 rounded-full font-medium text-center">Lihat Layanan</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2f94a4fa-11b8-498d-bf32-1cd261709477.png" alt="Team kreatif Rumah Vision sedang bekerja pada berbagai perangkat digital dan kamera profesional di studio modern" class="rounded-lg shadow-xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Layanan Profesional Kami</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Kami menawarkan berbagai solusi kreatif untuk kebutuhan media dan informasi bisnis Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fotografi -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d6ddd93-3125-47fa-990f-e713a9573391.png" alt="Fotografer profesional sedang mengambil gambar model dengan kamera DSLR di studio dengan lighting setup profesional" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-camera text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Fotografi Profesional</h3>
+                        </div>
+                        <p class="text-gray-600">Jasa fotografi produk, pernikahan, acara, dan komersial dengan hasil berkualitas tinggi dan proses editing profesional.</p>
+                    </div>
+                </div>
+                
+                <!-- Videografi -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3142e285-699e-4b51-914d-4ac6b21f20b0.png" alt="Kru video sedang melakukan shooting profesional dengan kamera cinema dan stabilizer di lokasi outdoor" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-video text-orange-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Videografi & Editing</h3>
+                        </div>
+                        <p class="text-gray-600">Pembuatan video company profile, iklan, dokumentasi acara, dan konten kreatif dengan teknik cinematografi profesional.</p>
+                    </div>
+                </div>
+                
+                <!-- Live Streaming -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bc62117a-db5e-43cd-9739-1648afbd0d3a.png" alt="Set live streaming profesional dengan multiple kamera, lighting, dan monitor kontrol di studio produksi" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-broadcast-tower text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Live Streaming</h3>
+                        </div>
+                        <p class="text-gray-600">Layanan live streaming acara virtual, webinar, konser, dan pertunjukan dengan kualitas HD dan multi-platform streaming.</p>
+                    </div>
+                </div>
+                
+                <!-- Desain Grafis -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/04a00345-eeaf-48de-bab9-3c73e7dd28a5.png" alt="Desainer grafis sedang bekerja di tablet grafis dengan tampilan desain brosur kreatif di layar komputer" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-paint-brush text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Desain Grafis</h3>
+                        </div>
+                        <p class="text-gray-600">Pembuatan logo, banner, brosur, packaging, dan berbagai kebutuhan desain visual dengan konsep kreatif dan profesional.</p>
+                    </div>
+                </div>
+                
+                <!-- Video Editing -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a6986213-f0da-4854-9ecb-b58982b7d5da.png" alt="Editor video sedang mengerjakan timeline editing profesional dengan software di workstation dual monitor" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-cut text-red-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Editing Video</h3>
+                        </div>
+                        <p class="text-gray-600">Jasa editing video dengan efek khusus, color grading, motion graphic, dan audio mastering untuk hasil yang cinematic.</p>
+                    </div>
+                </div>
+                
+                <!-- Web Development -->
+                <div class="service-card bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb3c9535-a01c-40bf-b0b2-65942f46d790.png" alt="Developer web sedang bekerja pada code website modern dengan tampilan responsive di berbagai perangkat" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-code text-indigo-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Pembuatan Website</h3>
+                        </div>
+                        <p class="text-gray-600">Development website perusahaan, portfolio, e-commerce, dan sistem khusus dengan desain responsif dan fitur modern.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Portfolio Kami</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Beberapa contoh hasil karya profesional yang telah kami selesaikan untuk klien</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d31e0bea-2c20-402e-8192-58acdd19cf5e.png" alt="Foto produk fashion dengan lighting studio dan komposisi kreatif untuk campaign merek lokal" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Fotografi Produk</h3>
+                            <p class="text-gray-200">Merek Fashion Lokal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a3f631e-b5dd-452c-89db-e8e4ddb242f1.png" alt="Frame video company profile perusahaan teknologi dengan animasi motion graphics dan footage aerial drone" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Video Company Profile</h3>
+                            <p class="text-gray-200">PT Solusi Teknologi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="asset/1.png"  alt="Tampilan website e-commerce modern dengan UI/UX responsif untuk toko peralatan olahraga" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Website CMS</h3>
+                            <p class="text-gray-200">PP. Luhur Wahid Hasyim Semarang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="asset/COKELATBANANACHIPS.jpg" alt="Desain branding paket lengkap termasuk logo, kartu nama, dan stationary untuk kafe artisan" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Desain Branding</h3>
+                            <p class="text-gray-200">Coffe Banana Chips</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/88386ce8-9698-44aa-9b26-77d39dded568.png" alt="Screenshot live streaming event musik dengan multi angle kamera dan overlay grafis profesional" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Live Streaming</h3>
+                            <p class="text-gray-200">Festival Musik Daerah</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-xl shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/08512705-3ec8-47fb-bad1-d6c40426b24c.png" alt="Video promo kuliner dengan teknik food cinematography dan slow motion untuk restoran premium" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-white text-xl font-bold mb-2">Video Promo Kuliner</h3>
+                            <p class="text-gray-200">Gourmet Bistro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/6283838383948?text=Saya%20tertarik%20dengan%20portfolio%20Rumah%20Vision" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                    Lihat Lebih Banyak
+                    <svg class="ml-3 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Apa Kata Klien Kami</h2>
+                <p class="text-lg max-w-3xl mx-auto">Testimoni dari berbagai klien yang telah menggunakan jasa Rumah Vision</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/53a1f261-85d3-4b60-8864-0f4aa0781a81.png" alt="Portrait wanita profesional dengan senyum tulus dan latar belakang kantor" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Dian Sastrowardoyo</h4>
+                            <p class="text-blue-200 text-sm">PT Maju Jaya Abadi</p>
+                        </div>
+                    </div>
+                    <p class="text-white">"Hasil foto produk untuk katalog kami sangat memuaskan. Lighting dan komposisinya membuat produk kami terlihat premium. Recommended!"</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3f7ad663-2863-4966-9480-ac84630f44cc.png" alt="Portrait pria dewasa dengan kemeja formal dan ekspresi profesional" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Budi Santoso</h4>
+                            <p class="text-blue-200 text-sm">CV Kreatif Media</p>
+                        </div>
+                    </div>
+                    <p class="text-white">"Video company profile yang dibuat sangat profesional. Dari konsep sampai eksekusi, tim Rumah Vision sangat detail dan memahami kebutuhan kami."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/22c97a6c-9f2d-469d-befb-1b03a413d245.png" alt="Portrait wanita muda dengan gaya kasual dan ekspresi ramah" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-semibold">Ratna Dewi</h4>
+                            <p class="text-blue-200 text-sm">Bisnis Kuliner</p>
+                        </div>
+                    </div>
+                    <p class="text-white">"Live streaming acara kami berjalan lancar berkat tim Rumah Vision. Kualitas gambar dan suara sangat baik, bahkan banyak tamu yang memuji."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star text-yellow-300"></i>
+                        <i class="fas fa-star-half-alt text-yellow-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Tentang Rumah Vision</h2>
+                    <p class="text-gray-600 mb-6">Rumah Vision adalah perusahaan kreatif yang berfokus pada solusi media dan informasi. Didirikan pada tahun 2020, kami telah membantu ratusan klien dari berbagai industri untuk mengkomunikasikan ide dan bisnis mereka melalui media visual yang kreatif dan profesional.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-purple-100 p-2 rounded-full">
+                                    <i class="fas fa-check text-purple-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Tim profesional dengan pengalaman lebih dari 5 tahun</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-orange-100 p-2 rounded-full">
+                                    <i class="fas fa-check text-orange-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Peralatan modern dan software terkini</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="bg-blue-100 p-2 rounded-full">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700 font-medium">Proses kreatif yang cepat dan hasil maksimal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c8d9e062-df23-4c47-8cba-060bb229e60b.png" alt="Tim kreatif Rumah Vision sedang berdiskusi di ruang kerja modern dengan peralatan produksi multimedia" class="rounded-lg shadow-xl w-full" />
+                        <div class="absolute -bottom-6 -left-6 bg-purple-600 text-white p-4 rounded-lg shadow-lg w-3/4">
+                            <h3 class="font-bold text-lg mb-2">Visi Kami</h3>
+                            <p class="text-sm">Menjadi mitra kreatif terpercaya dalam menghadirkan solusi media dan informasi yang inovatif untuk bisnis dan komunitas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Hubungi Kami</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Siap membantu kebutuhan kreatif Anda. Silakan hubungi kami melalui formulir berikut atau langsung via WhatsApp.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Nama Anda">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="email@contoh.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon/WA</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="081234567890">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Layanan yang Diinginkan</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+                                <option value="">Pilih Layanan</option>
+                                <option value="fotografi">Fotografi</option>
+                                <option value="videografi">Videografi</option>
+                                <option value="live-streaming">Live Streaming</option>
+                                <option value="desain">Desain Grafis</option>
+                                <option value="editing">Editing Video</option>
+                                <option value="website">Pembuatan Website</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Ceritakan kepada kami tentang proyek Anda"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 transition duration-150 ease-in-out">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Informasi Kontak</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-purple-100 p-3 rounded-full">
+                                        <i class="fas fa-map-marker-alt text-purple-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Alamat</h4>
+                                    <p class="text-gray-600">Jl. Menoreh Utara, NO. 19A, Sampangan, Gajahmungkur</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-orange-100 p-3 rounded-full">
+                                        <i class="fas fa-phone-alt text-orange-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Telepon/WhatsApp</h4>
+                                    <p class="text-gray-600">0838-3838-3948</p>
+                                    <a href="https://wa.me/6283838383948" class="inline-flex items-center mt-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-full text-sm font-medium">
+                                        <i class="fab fa-whatsapp mr-2"></i> Chat WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-blue-100 p-3 rounded-full">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Email</h4>
+                                    <p class="text-gray-600">hello@rumahvision.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="bg-red-100 p-3 rounded-full">
+                                        <i class="fas fa-clock text-red-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Jam Operasional</h4>
+                                    <p class="text-gray-600">Senin - Sabtu: 09.00 - 17.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Floating WA Button - Visible on all screens -->
+<div class="fixed bottom-6 right-4 z-50">
+    <a href="https://wa.me/6283838383948" 
+       class="btn-wa bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transform hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">RUMAH VISION</h3>
+                    <p class="text-gray-400 mb-6">Solusi kreatif untuk kebutuhan media dan informasi bisnis Anda dengan kualitas profesional dan layanan terbaik.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Fotografi</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Videografi</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Live Streaming</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Desain Grafis</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Editing Video</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Pembuatan Website</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Beranda</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white">Portfolio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Kontak</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Rumah Vision. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Kebijakan Privasi</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling with WhatsApp integration
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            if(name && service) {
+                // Format WhatsApp message
+                const whatsappMsg = `Halo Rumah Vision, saya ${name}%0A%0A`
+                    + `*Email:* ${email || 'Tidak diisi'}%0A`
+                    + `*No. HP/WA:* ${phone || 'Tidak diisi'}%0A`
+                    + `*Layanan:* ${service}%0A`
+                    + `*Pesan:* ${message || 'Tidak ada pesan tambahan'}`;
+                
+                // Open WhatsApp with prefilled message
+                window.open(`https://wa.me/6283838383948?text=${whatsappMsg}`, '_blank');
+                
+                // Keep the existing alert
+                alert(`Terima kasih ${name}! Pesan Anda tentang layanan ${service} telah terkirim. Kami akan segera menghubungi Anda.`);
+                this.reset();
+            } else {
+                alert('Silakan lengkapi nama dan pilih layanan yang diinginkan.');
+            }
+        });
+        
+        // Smooth scrolling for anchor links and close mobile menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Close mobile menu if open
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+            }
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Add WhatsApp click event
+        document.querySelectorAll('.btn-wa').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Track this event in analytics in real implementation
+                console.log('WA button clicked');
+            });
+        });
+    </script>
+</body>
+</html>
+
